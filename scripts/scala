@@ -1,2 +1,0 @@
-export MAVEN_OPTS="-Xmx3000m"
-ulimit -c unlimited
