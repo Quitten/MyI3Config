@@ -1,7 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Slack Web
-Exec=/home/barak/slack-linux-x64/slack
-Icon=/home/barak/slack-linux-x64/resources/app/icon.png
-Categories=Application;

@@ -1,7 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=WhatsApp
-Exec=/home/barak/whats-app-linux-x64/whats-app
-Icon=/home/barak/whats-app-linux-x64/resources/app/icon.png
-Categories=Application;

@@ -24,10 +24,13 @@
         "cpu",
         "custom/left-arrow-light",
         "custom/left-arrow-dark",
+        "network",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
         "battery",
         "custom/left-arrow-light",
         "custom/left-arrow-dark",
-        "network",
+        "custom/lang",
         "custom/left-arrow-light",
         "custom/left-arrow-dark",
         "clock",
@@ -52,6 +55,11 @@
         "format": "",
         "tooltip": false
     },
+    "custom/lang": {
+        "exec": "setxkbmap -query | grep layout | awk '{print $2}'",
+        "exec-if": "which setxkbmap",
+        "interval": 1
+    },
     "network": {
         "interface": "wlp2s0",
         "_c": "// (Optional) To force the use of this interface",
@@ -66,9 +74,9 @@
         "disable-scroll": true,
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "",
+            "1": "",
             "2": "",
-            "3": "",
+            "3": "",
             "4": "",
             "5": "",
             "urgent": "",
@@ -77,22 +85,8 @@
         }
     },
     "clock": {
-        "tooltip-format": "{:%d-%m-%Y | %H:%M}",
-        "format-alt": "{:%d-%m-%Y}"
+        "format": "{:%H:%M %a %d/%m}"
     },
-    "clock#1": {
-        "format": "{:%a}",
-        "tooltip": false
-    },
-    "clock#2": {
-        "format": "{:%H:%M}",
-        "tooltip": false
-    },
-    "clock#3": {
-        "format": "{:%m-%d}",
-        "tooltip": false
-    },
-
     "pulseaudio": {
         "format": "{icon} {volume:2}%",
         "format-bluetooth": "{icon}  {volume}%",
@@ -110,11 +104,13 @@
     },
     "memory": {
         "interval": 5,
-        "format": "Mem {}%"
+        "format": "Mem {}%",
+        "on-click": "alacritty -e glances"
     },
     "cpu": {
         "interval": 5,
-        "format": "CPU {usage:2}%"
+        "format": "CPU {usage:2}%",
+        "on-click": "alacritty -e glances"
     },
     "battery": {
         "states": {

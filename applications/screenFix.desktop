@@ -1,6 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Type=Application
-Name=Screen Fix
-Exec=/bin/sh "/home/barak/scripts/screenWork.sh"
-Categories=Application;

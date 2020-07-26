@@ -23,10 +23,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # Example configuration:
 #
 # exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+#         timeout 300 'swaylock -f -c 000000 -e -i ~/.ccwp.jpg' \
+#         timeout 600 'swaymsg "output * dpms off"' \
+#              resume 'swaymsg "output * dpms on"' \
+#         before-sleep 'swaylock -f -c 000000 -e -i ~/.ccwp.jpg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -93,6 +93,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Workspaces:
 #
+    # 
+    set $workspace1 "1:"
+    #set "workspace 2" "2:"
     # switch to workspace
     bindsym $mod+1 workspace 1
     bindsym $mod+2 workspace 2
@@ -139,6 +142,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
     # move focus to the parent container
     bindsym $mod+a focus parent
+
+smart_gaps on
+gaps inner 10
 #
 # Scratchpad:
 #
@@ -179,22 +185,25 @@ bindsym $mod+r mode "resize"
 #
 # Status Bar:
 #
-bar {
-    position top
-    status_command while ~/.config/sway/status.sh; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #000000
-        inactive_workspace #333333 #333333 #ffffff
-    }
-}
+exec waybar
+
+#bar {
+#    position top
+#    status_command waybar
+#    colors {
+#        statusline #ffffff
+#        background #000000
+#        inactive_workspace #333333 #333333 #ffffff
+#    }
+#}
 
 include /etc/sway/config.d/*
 
 #
 # Core Apps:
 #
+	exec libinput-gestures-setup start
 	exec compton
 	exec volnoti
 	exec killall notify-osd
@@ -207,9 +216,9 @@ include /etc/sway/config.d/*
 #
 	exec chromium
 	exec ulimit -c unlimited
-	exec ~/Downloads/Station-1.52.2-x86_64.AppImage
+	exec station
 	exec bluetoothctl power on
-	exec /home/barak/scripts/burp.sh
+	exec /home/barakt/scripts/burp.sh
 	exec_always ~/scripts/changeWallpaper.sh
 	exec_always "/bin/bash ~/.fehbg"
 	
@@ -238,16 +247,15 @@ include /etc/sway/config.d/*
 	# Misc
 	bindsym --release Print exec ~/scripts/screenshot.sh
 	bindcode $mod+54 exec ~/scripts/chlang.sh
-	exec greenclip daemon
-    	bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+    #exec greenclip daemon
+    #bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 	
 	# Displays
 	exec_always i3-msg "workspace 1, move workspace to output eDP-1"
-	exec_always i3-msg "workspace 2, move workspace to output 'Dell Inc. DELL U2412M YPPY089T1BWB'"
-	exec_always i3-msg "workspace 3, move workspace to output 'Dell Inc. DELL U2412M YPPY076D19FS'"
+	exec_always i3-msg "workspace 2, move workspace to output 'Dell Inc. DELL U2412M 30WJ15C70TLL'"
+	exec_always i3-msg "workspace 3, move workspace to output 'Dell Inc. DELL U2412M 30WJ165823DS'"
     
 	exec_always swaymsg output eDP-1 scale 2
-	exec_always swaymsg output eDP-1 position 0 0
-	exec_always swaymsg output '"Dell Inc. DELL U2412M YPPY089T1BWB"' position 1920 0
-	exec_always swaymsg output '"Dell Inc. DELL U2412M YPPY076D19FS"' position 3840 0
-    
+    exec_always swaymsg output eDP-1 position 0 0
+    exec_always swaymsg output '"Dell Inc. DELL U2412M 30WJ15C70TLL"' position 1920 0
+    exec_always swaymsg output '"Dell Inc. DELL U2412M 30WJ165823DS"' position 3840 0 res 1920x1200

@@ -2,6 +2,6 @@
 [Desktop Entry]
 Type=Application
 Name=Burp Suite Professional
-Exec=/bin/sh "/home/barak/scripts/burp.sh"
-Icon=/opt/BurpSuitePro/.install4j/BurpSuitePro.png
+Exec=/bin/sh "~/scripts/burp.sh"
+Icon=~/scripts/BurpSuitePro.png
 Categories=Application;

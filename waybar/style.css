@@ -20,6 +20,7 @@ window#waybar {
 
 #workspaces,
 #clock,
+#custom-lang,
 #window,
 #network,
 #clock.1,
@@ -67,7 +68,7 @@ window#waybar {
 #cpu {
 	color: #6c71c4;
 }
-#battery {
+#network {
 	color: #859900;
 }
 
