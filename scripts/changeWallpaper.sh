@@ -26,5 +26,7 @@ echo "$CURL_CMD $quality_wp -o $TMP_WP_LOCATION"
 $CURL_CMD $quality_wp -o $TMP_WP_LOCATION
 
 # Set the downloaded image as the system wallpaper
+# echo "swaymsg output * bg $TMP_WP_LOCATION"
+swaymsg output "*" bg $TMP_WP_LOCATION stretch
 printf "#!/bin/sh\nfeh --bg-fill '$TMP_WP_LOCATION'\n" > $FEH_CFG_LOCATION
 sh ~/.fehbg

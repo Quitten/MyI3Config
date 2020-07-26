@@ -1,1 +1,1 @@
-JAVA_HOME=/usr/lib/jvm/java-8-jdk/ /bin/intellij-idea-ultimate-edition
+_JAVA_AWT_WM_NONREPARENTING=1 JAVA_HOME=/usr/lib/jvm/java-8-jdk/ /bin/intellij-idea-ultimate-edition

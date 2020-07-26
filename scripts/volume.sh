@@ -73,4 +73,5 @@ case $BLOCK_BUTTON in
 esac
 
 volStatus=$(volume | format)
-echo "<span weight=\"bold\" font_desc=\"Sans Italic 12\">♪</span><span font_desc=\"Sans Italic 10\"> $volStatus</span>"
+echo ♪ $volStatus
+# echo "<span weight=\"bold\" font_desc=\"Sans Italic 12\">♪</span><span font_desc=\"Sans Italic 10\"> $volStatus</span>"
