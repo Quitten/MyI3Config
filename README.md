@@ -1,1 +1,1 @@
-# MyI3Config
+# dotfiles
