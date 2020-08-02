@@ -1,0 +1,1 @@
+pacman -S dhcp networkmanager libinput libinput-gestures waybar sway awesome-fonts xwininfo oh-my-zsh pulseaudio ifconfig pavucontrol pamixer glances alacritty dunst

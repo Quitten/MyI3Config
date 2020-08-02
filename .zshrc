@@ -1,5 +1,8 @@
 export PATH=$HOME/bin:/usr/local/bin:/usr/lib/jvm/java-8-jdk/bin/:/home/barakt/.cargo/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-8-jdk/
+export LANG=en_US.UTF-8
+export LANGUAGE=es_US
+export LC_ALL=C
 export ZSH="/home/barak/.oh-my-zsh"
 plugins=(git
 	systemd)
