@@ -1,13 +1,13 @@
 export PATH=$HOME/bin:/usr/local/bin:/usr/lib/jvm/java-8-jdk/bin/:/home/barakt/.cargo/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/java-8-jdk/
 export LANG=en_US.UTF-8
-export LANGUAGE=es_US
+export LANGUAGE=en_US
 export LC_ALL=C
 export ZSH="/home/barak/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
 plugins=(git
 	systemd)
-
-source $ZSH/oh-my-zsh.sh
 
 alias frc='sudo ~/projects/frc/frc.sh'
 alias burp='~/scripts/burp.sh'
@@ -41,11 +41,9 @@ if [ -f /tmp/.currentdir ]; then
    builtin cd `cat /tmp/.currentdir`
 fi
 
-
-# PS1='\[\e]0;\t@\h: \w\a\]${debian_chroot:+($debian_chroot)}\t@\h:\w\$ '
-
 source "/usr/share/fzf/key-bindings.zsh"
 source "/usr/share/fzf/completion.zsh"
+source $ZSH/oh-my-zsh.sh
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] 
 then
