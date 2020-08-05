@@ -3,6 +3,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-jdk/
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 export LC_ALL=C
+export _JAVA_AWT_WM_NONREPARENTING=1
 export ZSH="/home/barak/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
