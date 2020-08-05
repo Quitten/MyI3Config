@@ -11,7 +11,10 @@ set $right l
 set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu ~/scripts/ulauncher.sh
+set $menu ulauncher
+
+font pango:SourceCodePro Medium 10
+
 
 ### Output configuration
 #
@@ -80,12 +83,11 @@ input 1739:52710:DLL096D:01_06CB:CDE6_Touchpad {
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right exec "swaylock -f -c 000000 -e -i ~/.ccwp.jpg"
-    # or use $mod+[up|down|left|right]
-	#bindsym $mod+Right exec "~/scripts/movefocus.sh focus right"
-    #bindsym $mod+Left exec "~/scripts/movefocus.sh focus left"
-	#bindsym $mod+Down exec "~/scripts/movefocus.sh focus down"
-	#bindsym $mod+Up exec "~/scripts/movefocus.sh focus up"
     
+    bindsym $mod+Right focus right
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
 
     # _move_ the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -211,6 +213,7 @@ include /etc/sway/config.d/*
 # Core Apps:
 #
 	exec libinput-gestures-setup start
+    exec ydotoold
 	exec compton
 	exec volnoti
 	exec killall notify-osd
@@ -239,21 +242,21 @@ include /etc/sway/config.d/*
 	bindsym $mod+Down+Control exec "~/scripts/moveMouse.sh down"
 
 	# Volume
-	bindsym XF86AudioRaiseVolume exec --no-startup-id ~/scripts/vol.sh up
-	bindsym XF86AudioLowerVolume exec --no-startup-id ~/scripts/vol.sh down
-	bindsym XF86AudioMute exec --no-startup-id ~/scripts/vol.sh mute
+	bindsym F1 exec --no-startup-id ~/scripts/vol.sh mute
+    bindsym F2 exec --no-startup-id ~/scripts/vol.sh down
+    bindsym F3 exec --no-startup-id ~/scripts/vol.sh up
 
 	# Scrachpad
 	bindsym $mod+bracketright [instance="station*"] scratchpad show, resize set 1000 800
 	bindsym $mod+bracketleft [instance="station*"] scratchpad show, resize set 1000 800
 
 	# Brightness control
-	bindsym XF86MonBrightnessUp exec --no-startup-id ~/scripts/bright_up.sh
-	bindsym XF86MonBrightnessDown exec --no-startup-id ~/scripts/bright_down.sh
+	bindsym F6 exec "light -U 20"
+    bindsym F7 exec "light -A 20"
 	
 	# Misc
 	bindsym --release Print exec ~/scripts/screenshot.sh
-	bindcode $mod+54 exec ~/scripts/chlang.sh
+	bindcode $mod+54 exec ~/scripts/chlng.sh
     #exec greenclip daemon
     #bindsym $mod+v exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 	
@@ -262,13 +265,8 @@ include /etc/sway/config.d/*
 	exec_always i3-msg "workspace 2, move workspace to output 'Dell Inc. DELL U2412M 30WJ15C70TLL'"
 	exec_always i3-msg "workspace 3, move workspace to output 'Dell Inc. DELL U2412M 30WJ165823DS'"
     
-	exec_always swaymsg output eDP-1 scale 2
+	# exec_always swaymsg output eDP-1 scale 2
     exec_always swaymsg output eDP-1 position 0 0
     exec_always swaymsg output '"Dell Inc. DELL U2412M 30WJ15C70TLL"' position 1920 0
     exec_always swaymsg output '"Dell Inc. DELL U2412M 30WJ165823DS"' position 3840 0 res 1920x1200
 
-# Or use $mod+[up|down|left|right]
-    bindsym $mod+Left swaymsg focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
